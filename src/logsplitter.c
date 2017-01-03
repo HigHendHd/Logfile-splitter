@@ -64,9 +64,9 @@ void split(char *filename) {
 	int cnt = 1;
 	int pos = 0;
 	int prevPos = 0;
-	int seeker;
+	int seeker = 0;
 
-	FILE *fp = fopen(filename, "r");
+	FILE *fp = fopen(filename, "rb");
 	fseek(fp, 0, SEEK_END);
 	int filesize = ftell(fp);
 	fseek(fp, 0, SEEK_SET);
@@ -83,14 +83,13 @@ void split(char *filename) {
 
 		char *fileinput = malloc(maxSize + 1);
 		fseek(fp, prevPos, SEEK_SET);
-		int size = fread(fileinput, 1, pos, fp);
+		int size = fread(fileinput, 1, pos - prevPos, fp);
 		fileinput[size] = '\0';
 
 		char *tmp = generateFilename(filename, cnt);
-		FILE *splittedfile = fopen(tmp, "w+b");
+		FILE *splittedfile = fopen(tmp, "w+");
 		fprintf(splittedfile, "%s", fileinput);
 		generatedFiles[cnt - 1] = splittedfile;
-		//fclose(splittedfile);
 		free(tmp);
 		free(fileinput);
 
