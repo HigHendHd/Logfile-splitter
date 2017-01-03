@@ -145,7 +145,7 @@ void addClose() {
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
-		printf("Only provide 1 file as argument\n");
+		printf("Only provide 1 file as argument\r\n");
 		return 1;
 	}
 
@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
 	fp = fopen(argv[1], "r");
 
 	if (fp == 0) {
-		printf("Error opening file\n");
+		printf("Error opening file\r\n");
 		return 1;
 	}
 
