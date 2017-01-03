@@ -16,7 +16,7 @@ Das Projekt beinhaltet einen Loggenerator um ein Testlog zu erzeugen und einen L
 
 Git repository herunterladen
 
-̀̀```
+```
 git clone https://github.com/HigHendHd/Logfile-splitter.git
 ```
 
