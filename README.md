@@ -11,6 +11,7 @@ Das Projekt beinhaltet einen Loggenerator um ein Testlog zu erzeugen und einen L
 **Benötigte Programme**
 
  - gcc
+ - git
  - make
  - mingw32-gcc
 
