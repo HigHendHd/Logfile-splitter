@@ -6,7 +6,7 @@
 
 FILE *generatedFiles[generatedFileSize] = {0};
 
-char* itoa(int val, int base){
+char* integertoascii(int val, int base){
 
 	static char buf[32] = {0};
 
@@ -20,7 +20,7 @@ char* itoa(int val, int base){
 }
 
 char *generateFilename(char* basename, int num) {
-	char *fileextension = itoa(num, 10);
+	char *fileextension = integertoascii(num, 10);
 
 	const char *delim = ".";
 
